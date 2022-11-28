@@ -41,6 +41,12 @@ async function displayTodos() {
     // call render function, pass in state and complete handler function!
     for (let todo of todos) {
         const todoEl = renderTodo(todo);
+
+        todoEl.addEventListener('click', async () => {
+            await completeTodo(todo.id);
+
+            displayTodos();
+        });
         // append to .todos
         todosEl.append(todoEl);
     }

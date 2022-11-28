@@ -5,6 +5,7 @@ export function renderTodo(todo, handleComplete) {
     // depending on whether the todo is complete, give the div the appropriate css class ('complete' or 'incomplete')
 
     // add the 'todo' css class no matter what
+    div.classList.add(todo.complete ? 'complete' : 'incomplete');
     div.classList.add('todo');
     // put the todo's text into the p tag
     p.textContent = todo.todo;
